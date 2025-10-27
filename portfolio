@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Personal portfolio showcasing projects, skills and contact." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#93a3bf;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+      --maxw:1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#071029 0%, #071827 60%);color:#e6eef8}
+    .container{max-width:var(--maxw);margin:36px auto;padding:24px}
+
+    header{display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:grid;place-items:center;font-weight:800;color:white;font-size:18px}
+    h1{font-size:22px;margin:0}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+    nav a{color:var(--muted);text-decoration:none;margin-left:12px;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:center;margin-top:28px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:20px;box-shadow:0 6px 20px rgba(2,6,23,0.6);backdrop-filter: blur(6px)}
+
+    .intro h2{margin:0 0 8px;font-size:28px}
+    .intro p{color:var(--muted);line-height:1.55}
+    .cta{margin-top:16px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#4f46e5);color:white}
+    .btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+
+    .profile-card{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+    .avatar{width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,#111827,#0f1724);display:grid;place-items:center;font-size:42px;font-weight:800}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+    .skill{padding:8px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:600;font-size:13px}
+
+    main{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-top:28px}
+    section h3{margin-top:0}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+    .project img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .project .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    .about{line-height:1.55;color:var(--muted)}
+    .contact-form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit;min-width:0}
+    textarea{min-height:120px;resize:vertical}
+    footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      main{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .profile-card{flex-direction:row;align-items:center;text-align:left}
+      .avatar{width:96px;height:96px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">YN</div>
+        <div>
+          <h1>Your Name</h1>
+          <p class="lead">Frontend Developer • Designer • Problem-solver</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="card intro">
+        <h2>Hi — I’m <strong>Your Name</strong></h2>
+        <p>I build clean, accessible web experiences and simple tools that help people get things done. I specialize in building responsive interfaces and concentrating on performance and accessibility.</p>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="downloadResume()">Download Resume</button>
+          <a class="btn btn-ghost" href="#contact">Hire me</a>
+        </div>
+
+        <div style="margin-top:20px">
+          <h4 style="margin:0 0 8px">Selected work</h4>
+          <div class="projects" style="margin-top:8px">
+            <div class="project">
+              <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project screenshot">
+              <div>
+                <strong>Project Alpha</strong>
+                <p style="margin:6px 0 0;color:var(--muted);font-size:13px">A responsive landing page built with semantic HTML and vanilla JS.</p>
+                <div class="tags" style="margin-top:8px"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+              </div>
+            </div>
+
+            <div class="project">
+              <img src="https://images.unsplash.com/photo-1502767089025-6572583495b0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project screenshot">
+              <div>
+                <strong>Project Beta</strong>
+                <p style="margin:6px 0 0;color:var(--muted);font-size:13px">A small web app demonstrating API usage and state management.</p>
+                <div class="tags" style="margin-top:8px"><span class="tag">React</span><span class="tag">API</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card profile-card">
+        <div class="avatar">YN</div>
+        <div>
+          <h3 style="margin:0">Your Name</h3>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:13px">Based in Kigali — Open to remote work</p>
+          <div class="skills" id="skills" style="margin-top:12px">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Figma</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <main>
+      <section>
+        <div class="card about">
+          <h3>About</h3>
+          <p>I’m a developer focused on frontend projects with an eye for design. I enjoy turning complex problems into simple, beautiful, and intuitive interfaces.
+          I care about performance, accessibility and writing clean maintainable code.</p>
+
+          <h3 id="projects" style="margin-top:18px">Projects</h3>
+          <div class="projects" style="margin-top:10px">
+            <!-- Example projects — replace with yours -->
+            <div class="project">
+              <img src="https://images.unsplash.com/photo-1526378721069-2ef1b2f1b7f6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="project">
+              <div>
+                <strong>Project Gamma</strong>
+                <p style="margin:6px 0 0;color:var(--muted);font-size:13px">A prototype e‑commerce UI with accessible components.</p>
+                <div class="tags" style="margin-top:8px"><span class="tag">Accessibility</span><span class="tag">UI</span></div>
+              </div>
+            </div>
+
+            <div class="project">
+              <img src="https://images.unsplash.com/photo-1564866657312-5d03a2df21a2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="project">
+              <div>
+                <strong>Project Delta</strong>
+                <p style="margin:6px 0 0;color:var(--muted);font-size:13px">An interactive data viz made with charting libs and careful UX.</p>
+                <div class="tags" style="margin-top:8px"><span class="tag">DataViz</span><span class="tag">UX</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Contact</h3>
+          <p style="color:var(--muted);">Interested in collaborating or hiring? Send a quick message — I reply within a few days.</p>
+
+          <form id="contact" class="contact-form" onsubmit="handleContact(event)">
+            <input id="name" type="text" placeholder="Your name" required />
+            <input id="email" type="email" placeholder="you@example.com" required />
+            <textarea id="message" placeholder="Tell me about the project..." required></textarea>
+            <button type="submit" class="btn btn-primary">Send message</button>
+          </form>
+
+          <div style="margin-top:16px">
+            <h4 style="margin:0">Social</h4>
+            <p style="margin:8px 0 0"><a href="#" style="color:var(--muted);text-decoration:none">GitHub</a> · <a href="#" style="color:var(--muted);text-decoration:none">LinkedIn</a> · <a href="#" style="color:var(--muted);text-decoration:none">Twitter</a></p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Quick Info</h3>
+          <p style="margin:6px 0 0;color:var(--muted)">Location: Kigali, Rwanda<br/>Availability: Open to full-time & freelance</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Made with ❤️ — Replace this with your real
